@@ -65,11 +65,15 @@
         // No need to change anything ABOVE this line ^
 
         return (
+          //1. react fragments were missing. react fragments are needed to wrap more than one JSX element.
+          // 2. the variable name "drawCard" was needed in the curly braces so that the function can be called upon.
+          // 3. the onclick attribute for the shuffle button needs to be camelCase as onClick.
+          <>
           <h1>Draw a Card</h1>
-          <button onClick={}>
+          <button onClick={drawCard}>
             Click to Draw a Card
           </button>
-          <button onclick={shuffle}>
+          <button onClick={shuffle}>
             Return Cards and Shuffle Deck
           </button>
           <div style={handStyles}>
@@ -80,7 +84,10 @@
                 </div>
               )
             })}
+
+
           </div>
+          </>
         )
       }
 
